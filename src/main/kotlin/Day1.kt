@@ -1,4 +1,4 @@
-import utils.getFile
+import utils.getFileFromResources
 import kotlin.math.abs
 
 class Day1 {
@@ -23,7 +23,7 @@ class Day1 {
         val locations1 = mutableListOf<Int>()
         val locations2 = mutableListOf<Int>()
 
-        getFile("/Day1/Day1Input1").useLines { lines ->
+        getFileFromResources("/Day1").useLines { lines ->
             lines.map { it.split("\\s+".toRegex()) }.forEach {
                 locations1.add(it.first().toInt())
                 locations2.add(it.last().toInt())
@@ -35,5 +35,6 @@ class Day1 {
 }
 
 fun main() {
+    println(Day1().calculateTotalDistance())
     println(Day1().calculateSimilarityScore())
 }
